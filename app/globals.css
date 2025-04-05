@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: 210 100% 40%; /* Blue */
+  --primary-foreground: 0 0% 100%;
+  --secondary: 180 70% 40%; /* Teal */
+  --secondary-foreground: 0 0% 100%;
+  --accent: 270 70% 45%; /* Purple */
+  --accent-foreground: 0 0% 100%;
+  --background: 0 0% 100%;
+  --foreground: 222 47% 11%;
+  --muted: 210 40% 96%;
+  --muted-foreground: 215 16% 47%;
+  --border: 214 32% 91%;
+  --radius: 0.5rem;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.gradient-text {
+  @apply bg-gradient-to-r from-blue-600 to-teal-500 text-transparent bg-clip-text;
+}
+
+.hero-gradient {
+  @apply bg-gradient-to-r from-slate-900 to-slate-800;
+}
+
+.cta-gradient {
+  @apply bg-gradient-to-r from-blue-600 to-blue-700;
+}
+
+.service-icon {
+  @apply w-12 h-12 rounded-lg flex items-center justify-center mb-4;
+}
+
+.card-hover {
+  @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+}
+
+.section-padding {
+  @apply py-16 md:py-24;
+}
+
+.container-padding {
+  @apply px-4 md:px-6;
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.staggered-children > * {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.staggered-children > *:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.staggered-children > *:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.staggered-children > *:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.staggered-children > *:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.staggered-children > *:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.staggered-children > *:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
